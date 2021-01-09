@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Viewport 단위(vh, vw, vmin, vmax)-반응</title>
+    <style>
+      /*
+        반응형 웹디자인은 화면의 크기에 동적으로 대응하기 위해 % 단위를 자주 사용한다.
+        하지만 % 단위는 em과 같이 상속에 의해 부모 요소에 상대적 영향을 받는다.
+        Viewport 단위는 상대적인 단위로 viewport를 기준으로 한 상대적 사이즈를 의미한다.
+         */
+      body {
+        margin: 0px;
+      }
+      /*
+        예를 들어 viewport 너비가 1000px, 높이가 600px인 경우,
+        1vw : viewport 너비 1000px의 1%인 10px
+        1vh : viewport 높이 600px의 1%인 6px
+        vmin : viewport 높이 600px의 1%인 6px
+        vmax : viewport 너비 1000px의 1%인 10px
+           */
+      .item {
+        width: 50vw;
+        height: 100vh;
+        text-align: center;
+        line-height: 100vh;
+        font-size: 4rem;
+        color: white;
+      }
+      .item1 {
+        background-color: red;
+      }
+      .item2 {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+  </body>
+</html>
