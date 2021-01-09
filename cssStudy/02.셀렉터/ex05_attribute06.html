@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>어트리뷰트 셀렉터06</title>
+    <style>
+      /* a 요소 중에 href 어트리뷰트 값이 ".html"로 끝나는 요소 */
+      a[href$=".html"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="naver.html">네이버.html</a><br />
+    <a href="naver.jsp">네이버.jsp</a><br />
+  </body>
+</html>
