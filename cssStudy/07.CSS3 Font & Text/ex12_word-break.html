@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Word-Break</title>
+    <!-- word-wrap 프로퍼티는 단어를 어느 정도는 고려하여 개행하지만(.,- 등을 고려한다) word-break: break-all;는 단어를 고려하지 않고 부모 영역에 맞추어 강제 개행한다.-->
+    <style>
+      div {
+        width: 150px;
+        height: 150px;
+        padding: 10px;
+        margin: 40px;
+        border-radius: 6px;
+        border-color: gray;
+        border-style: dotted;
+      }
+      .word-wrap {
+        word-wrap: break-word;
+      }
+      .word-break {
+        word-break: break-all;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Floccinaucinihilipilification https://poiemaweb.com/css3-font-text
+    </div>
+
+    <h1>word-wrap</h1>
+    <div class="word-wrap">
+      Floccinaucinihilipilification https://poiemaweb.com/css3-font-text
+    </div>
+
+    <h1>word-break</h1>
+    <div class="word-break">
+      Floccinaucinihilipilification https://poiemaweb.com/css3-font-text
+    </div>
+  </body>
+</html>
