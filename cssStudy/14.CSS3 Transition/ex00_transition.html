@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transition</title>
+    <style>
+      div {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+      /* 마우스 오버시 변경 */
+      div:hover {
+        border-radius: 50%;
+        background: blue;
+      }
+
+      .transition {
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: all 2s;
+      }
+      .transition:hover {
+        border-radius: 50%;
+        background: blue;
+      }
+
+      .tran_hover:hover {
+        border-radius: 50%;
+        background: blue;
+        transition: all 2s;
+      }
+
+      .div_script {
+        transition: all 2s;
+      }
+      .hover {
+        background: blue;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <!-- 마우스 Hover 시 transition 발동 마우스 Hove off 시 O-->
+    <div class="transition"></div>
+    <!-- 마우스 Hover 시 transition 발동 마우스 Hover off 시 x -->
+    <div class="tran_hover"></div>
+    <div class="div_script"></div>
+    <script>
+      const elem = document.querySelector(".div_script");
+
+      elem.addEventListener("mouseover", function () {
+        this.classList.add("hover");
+      });
+
+      elem.addEventListener("mouseleave", function () {
+        this.classList.remove("hover");
+      });
+    </script>
+  </body>
+</html>
