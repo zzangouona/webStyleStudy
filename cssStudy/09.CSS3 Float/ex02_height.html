@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      float 프로퍼티가 선언된 자식 요소를 포함하는 부모 요소의 높이가 정상적으로
+      반영되지 않는 문제
+    </title>
+    <style>
+      .container {
+        /*overflow: hidden;*/
+        color: white;
+        text-align: center;
+        padding: 10px;
+        background-color: #def0c2;
+      }
+      /*.clear {*/
+      /*  height: 0;*/
+      /*  clear: both;*/
+      /*}*/
+      .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .d1,
+      .d2 {
+        float: left;
+        width: 50%;
+        padding: 20px 0;
+      }
+      .d1 {
+        background-color: #59b1f6;
+      }
+      .d2 {
+        background-color: #ffb5b4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="d1">1</div>
+      <div class="d2">2</div>
+      <!--      <div class="clear"></div>-->
+    </div>
+    <div style="background: red; padding: 10px; color: white">3</div>
+  </body>
+</html>
