@@ -1,0 +1,106 @@
+// map
+$foundation-palette: (
+  primary: #e44347,
+  mars: #d7525c,
+  saturn: #e4b884,
+  neptune: #5147d7,
+);
+
+.mars {
+  color: map-get($foundation-palette, mars);
+}
+
+// 변수
+// => .mars { color: #D7525C; }
+
+$site_max_width: 960px;
+$font_color: #333;
+$link_color: #00c;
+$font_family: Arial, sans-serif;
+$font_size: 16px;
+$line_height: percentage(20px / $font_size);
+
+body {
+  color: $font_color;
+
+  // Property Nesting
+  font: {
+    size: $font_size;
+    family: $font_family;
+  }
+
+  line-height: $line_height;
+}
+
+#main {
+  width: 100%;
+  max-width: $site_max_width;
+}
+
+// 변수 scope
+$width: 960px; // 전역 변수
+
+header {
+  width: $width;
+  margin: 0 auto;
+}
+
+#main {
+  // $color : #333 // 지역 변수
+  $color: #333 !global; // 전역 변수
+  width: $width;
+  margin: 20px auto;
+  section {
+    p {
+      color: $color;
+
+      a:link {
+        color: $color;
+      }
+    }
+  }
+}
+
+footer {
+  width: $width;
+  margin: 0 auto;
+  color: $color; // Error: Undefined variable: "$color".
+}
+
+// 전역 변수
+$width: 100px;
+
+#foo {
+  width: $width + 10; // 110px
+}
+
+#bar {
+  width: $width + 10in; // 1060px
+}
+
+p {
+  // font와 border-radius의 '/'는 CSS문법에 맞는 표현이므로 연산되지 않는다.
+  font: italic bold 12px/30px Georgia, serif;
+  // 타원형 둥근 모서리
+  border-radius: 10px 20px/20px;
+  /*
+  border-top-left-radius: 10px 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 10px 20px;
+  border-bottom-left-radius: 20px;
+  */
+
+  $width: 1000px;
+
+  width: $width / 2; // 변수에 대해 사용 →　width: 500px;
+  height: (500px / 2); // 괄호 내에서 사용 →　height: 250px;
+  margin-left: 5px + 8px / 2px; // 다른 연산의 일부로서 사용 →　margin-left: 9px;
+}
+
+#foo {
+  width: $width + 10; // 110px
+}
+
+#bar {
+  width: $width + 10in; // 1060px
+}
