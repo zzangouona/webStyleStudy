@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Keyframes</title>
+    <style>
+      div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: move;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+      }
+      /* @keyframes rule */
+      @keyframes move {
+        /* 애니메이션 시작 시점 */
+        from {
+          left: 0;
+        }
+        /* 애니메이션 종료 시점 */
+        to {
+          left: 300px;
+        }
+        /*
+        from, to 키워드 대신 %를 사용할 수 있다. 또한 시작과 끝 키프레임 사이에 % 단위로 키프레임을 삽입할 수 있다.
+        0% {
+          left: 0;
+        }
+        50% {
+          left: 100px;
+        }
+        100% {
+          left: 300px;
+        }
+         */
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
